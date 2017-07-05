@@ -1,0 +1,202 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\title{An Introduction to Wavelets}
+\author{Lee A. Barford, R. Shane Fazzio, David R. Smith}
+
+\date{September 1992}
+\maketitle
+
+%! \tableofcontents
+
+\section{Introduction}
+
+Over the past ten years much has been accomplished in the development of the theory of wavelets, and people are
+continuing to find new application domains. Theoretical accomplishments include specification of new bases for many
+different function spaces and characterization of orthogonal wavelets with compact support. Application areas so far
+discovered include signal processing, especially for nonstationary signals, image processing and compression, data
+compression, and quantum mechanics.
+
+However, at the present time most of the literature remains highly mathematical and requires a large investment of time
+to develop an understanding of wavelets and their potential uses. The purpose of this paper is to provide an overview
+of wavelet theory by developing, from an intuitive standpoint, the idea of the wavelet transform. Since a complete
+study of wavelets would encompass both a lengthy mathematical development and consideration of many application
+domains, we adopt a particular viewpoint that lends itself readily to signal processing applications. Our discussion
+starts with a comparison of the wavelet and Fourier transforms of an impulse function. This motivates a discus- sion
+of the multiresolution decomposition of a function with finite energy. We then give the definition of a wavelet and
+the wavelet transform. Following is a comparison of the similarities and differences between the wavelet and Fourier
+transforms. We conclude with some examples of wavelet transforms of ``popular'' signals. Other introductions to
+wavelets and their applications may be found in [1], [2], [5], [8], and [10].
+
+\section{A Motivation for Wavelets}
+
+The short-time Fourier transform is frequently utilized for nonstationary signal analysis. Although a powerful tool, it
+has some limitations in analyzing time-localized events. The wavelet transform has similarities with the short-time
+Fourier transform, but it also possesses a time-localization property that generally renders it superior for analyzing
+nonstationary phenomena. We now review the Fourier and short-time Fourier transforms, discuss some often desirable
+properties that the short-time Fourier transform does not possess, and introduce the wavelet transform.
+
+\subsection{The Fourier and Short-Time Fourier Transforms}
+
+For any function \(f\) with finite energy, the Fourier transform of \(f\) is defined to be the integral
+
+\[
+\hat{f}(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i \omega t} dt,
+\]
+
+\(\omega\) being the angular rate, equal to \(2\pi\) times frequency. A Fourier transform is often represented by its
+power spectrum -- the square of the modulus of \(\hat{f(\omega)}\) vs. \(\omega\). For example, the power spectrum of an impulse function has a constant value of unity and is independent of the time at which the impulse occurs. Time of
+occurrence affects only the phase of each frequency component.
+
+The Fourier transform is best suited to analyze stationary periodic functions--those that exactly repeat themselves
+once per period, without modification. It provides a single spectrum for the wholes ignal. For nonstationary signals
+we are interested in the frequencies that are dominant at any given time. For example, we perceive a musical melody
+as a succession of notes, each with its own frequency spectrum, rather than as one big signal with an overall spectrum.
+To analyze such signals, we may turn to the short-time Fourier transform.
+
+The \emph{short-time Fourier transform} (or \emph{STFT)} of a function at some time t is the Fourier transform of that
+function as examined through some time-limited window cen- tered on t. A different Fourier transform exists for each
+position t of the window. These transforms, produced by sliding the examination window along in time, constitute the
+STFT.
+
+If the examination window simply omits the signal outside the window, two problems are encountered. One is the sudden
+change in the power spectrum as a discontinuity enters or leaves the window, compounded by a lack of sensitivity to the
+position of the discontinuity within the window. The other problem is spectral leakage: if some component of the signal
+has a cycle time which is not an integral divisor of the window width, the transform exhibits spurious response at many
+frequencies. These problems are ameliorated by attenuating samples away from the center of the window, by a windowing
+function g. An example of a windowing function is the Gaussian, \(g(t) = e^{-at}\), for some constant \(a\).
+Mathematically, the STFT at time \(\tau\) is given by
+
+\[
+\hat{f_g}(\omega, \tau) = \int_{-\infty}^{\infty}f(t) g(t-\tau) e^{-i \omega t} dt
+\]
+
+The response of the STFT, centered at time \(\tau = \tau_0\), to an impulse function \(\delta(t-t_0)\) occuring at time
+\(t=t_0\) is given by
+
+\begin{align*}
+\hat{f_g}(\omega, \tau_0) &= \int_{-\infty}^{\infty} \delta(t-t_0) g(t-\tau_0) e^{-i \omega t} dt \\
+&= g(t_0-\tau_0) e^{-i \omega t_0}
+\end{align*}
+
+The power spectrum of the STFT is \(\hat{f_g}(\omega, \tau_0) = g^2(t_0-\tau_0)\). As shown in Figure 1, the power
+spectrum is the same for all frequencies.  The cross-section of the transform at constant frequency produces a time-
+reversed copy of the windowing function. Thus, the width (standard deviation) of the windowing function limits the
+accuracy with which the impulse can be located in time.
+
+Although the STFT windowing function's width is constant, its impact varies with frequency. At high frequencies the
+number of waves in a window is high, producing good accuracy in frequency measurement; yet the window width prevents
+good localization of signal discontinuities, which the high frequencies otherwise could provide. Narrowing the window
+width to accommodate more precise time-localization of discontinuities causes other problems. A narrow window width is
+inappropriate at low frequencies, because a narrow windowing function spans fewer cycles. It distorts the signal
+noticeably over one wavelength, degrading accuracy of frequency measurement. Indeed, wavelengths longer than the window
+width cannot be measured. From these considerations it seems advantageous to let the windowing function be broad for
+analyzing low frequencies and narrow for high frequencies.
+
+Since human perception of many types of signals has a logarithmic nature, the use of constant-Q filters in signal
+processing is not uncommon. A number of studies of the human senses find that the perceptual ``distance'' between two
+stimuli is dependent upon their ratios (with respect to the appropriate units of measurement for the stimuli). For
+example, a musical note one octave above another has twice the frequency. Loudness is rated in decibels, a logarithmic
+measurement. Psychophysical experiments conclude that the contribution of different frequencies to perceived quality of
+a visual image is logarithmic in frequency. A filter bank used to process these signals naturally consists of constant-Q
+filters -- those whose bandwidths are proportional to their center frequencies. However, interpreting the
+STFT as a filtering process results in a filter bank whose filters have constant bandwidth.
+
+\subsection{Wavelet Transforms}
+
+Equation 2 shows that the STFT of a signal is the inner product of the signal with an element of the set of basis
+functions \(g(t - \tau) e^{-i \omega t}\), which vary over frequency \(\omega\) and time \(\tau\). As shown by Figure 2a, all basis functions have the
+same time-amplitude envelope. The STFT decomposes a signal into a set of frequency bands at any given time.
+
+Wavelet transforms also decompose a signal into a set of ``frequency bands'' (referred to as scales) by projecting the
+signal onto an element of a set of basis functions. Although the scales do not live in the frequency domain, projection
+of the signal onto different scales is equivalent to bandpass filtering with a bank of constant-Q filters. The basis
+functions are called wavelets. Wavelets in a basis are all similar to each other, varying only by dilation and
+translation, as illustrated in Figure 2b. Wavelet transforms thus accommodate the two shortcomings of the STFT discussed
+above.
+
+Figure 3 displays the square of the modulus of the continuous wavelet transform (in analogy with the power spectrum) of an impulse function, using a Gaussian wavelet. The parameter \(\tau\) represents time, and \(s\) represents scale.
+(The \(s\) axis in Figure 3 is actually the base 2 logarithm of the scale.) Location of the impulse is clearly shown at time \(\tau = 0\). Narrowness of the fine-scale basis functions trades off frequency resolution in favor of time resolution. And yet, there is no set limit to the broadness of scale at which analysis might be performed, aside from the length of the signal itself. In contrast, the STFT is limited in both time and frequency resolution by the fixed width of its window.
+
+\subsection{Multiresolution Analysis}
+
+In order to analyze a nonstationary signal, we need to determine its behavior at any individual event. Multiresolution analysis provides one means to do this. A \emph{multiresolution analysis} decomposes a signal into a smoothed version of the original signal and a set of detail information at different scales. This type of decomposition is most easily understood by thinking of a picture (which is a two dimensional signal). We remove from the picture information that distinguishes the sharpest edges, leaving a new picture that is slightly blurred. This blurred version of the original picture is a rendering at a slightly coarser scale. We then recursively repeat the procedure. Each time we obtain some detail information and a more and more blurred (or smoothed) version of the original image. Removal of the detail information corresponds to a bandpass filtering, and generation of the smoothed image corresponds to a lowpass filtering. Given the decomposition, we can reconstruct the original image.
+
+Once we have decomposed a signal this way, we may analyze the behavior of the detail information across the different scales. We can extract the regularity of a singularity, which characterizes the signal's behavior at that point. This provides an effective means of edge detection. Furthermore, noise has a specific behavior across scales, and hence, in many cases we can separate the signal from the noise. Reconstruction then yields a relatively accurate noise free approximation of the original signal. This denoising technique is developed in [7].
+
+The wavelet transform specifies a multiresolution decomposition, with the wavelet defining the bandpass filter that determines the detail information. Associated with the wavelet is a smoothing function, which defines the complementary lowpass filter. Conditions to be described later ensure that the set consisting of the detail information at all scales and the smoothed version of the original signal contains no redundant information.
+
+In lieu of the wavelet transform's ability to localize in time and its ability to specify a multiresolution analysis, many potential application areas have been identified. These include edge characterization, noise reduction, data compression, and sub-band coding. This list is by no means exhaustive {\textendash} new applications are continually being discovered both in signal processing and in other domains.
+
+\section{Wavelets and the Wavelet Transform}
+
+\subsection{Mathematical Definitions}
+
+In this section we focus our attention on the mathematical definition of wavelets and the wavelet transform.
+Table 1 provides a summary of the notation used in the rest of this paper.
+
+As discussed above, a multiresolution analysis of any function \(f\) with finite energy decomposes \(f\) into
+
+\begin{itemize}
+\item a collection of details at different scales and
+\item a smoothed version of the original function.
+\end{itemize}
+
+ If we let \(L^2(\mathbb{R})\) denote the set of all functions with finite energy, then the details of \(f\) at any scale \(m\) is simply a projection of \(f\) onto a subspace \(W_m\) of \(L^2(\mathbb{R})\). This projection may be formally represented by a projection operator \(Q_m : L^2(\mathbb{R}) \rightarrow W_m\). Furthermore, there exists another projection operator P_M : \(L^2(\mathbb{R}) \rightarrow V_M, V_M \subset L^2(\mathbb{R})\), such that \(P_M f\) is the smoothed version of \(f\). Here \(m\) takes the values \(m = 1,2,\ldots ,M\), that is, \(f\) is decomposed into the smoothed version \(P_M f\) and \(M\) sets of details at different scales. As \(M\) increases the resolution of the smoothed version of \(f\) becomes coarser, and consequently, the finer detail information is contained in the scales corresponding to low values of \(m\). For any multiresolution analysis the \(W_m\) are orthogonal both to each other and to \(V_M\). In addition, assuming that \(V_0 = L^2(\mathbb{R})\), we have \(L^2(\mathbb{R}) = \oplus_{m=1}^{M} W_m \oplus V_M\), and hence we may write
+
+\[ f = P_M f + \sum_{m=1}^{M} Q_m f \]
+
+The question now arises as to how to define the \(Q_m\).
+We desire an orthonormal basis of \(W_m\), call it \(\psi_{mn}\) (m fixed), so that
+
+\[
+Q_m f = \sum_{n=-\infty}^{\infty} \langle f, \psi_{mn} \rangle \psi_{mn}
+\]
+
+where \(\langle \cdotp,\cdotp \rangle\) denotes inner product. As it turns out, wavelets provide the \(\psi_{mn}\)\(\). We therefore turn our attention to the definition of wavelets and the wavelet transform and then show how to define \(Q_m\) in terms of them.
+
+Before proceeding however a few remarks may provide some clarification. After removing the first set of detail information from \(f\) we are left with a slightly smoothed version of \(f\). Iteratively removing detail information progressively generates more and more smoothed versions of \(f\). We stop the process once we have enough detail information or a smooth enough version to do the analysis we desire. Thus the subspaces \(W\) and \(V\) are intimately related in the following way: given any \(m\), a function \(f \in V_m\) is decomposed into details and a smoothed version at the \(m + 1\) scale. That is, \(f\) is decomposed by projecting it onto orthogonal complements in \(V_m\), one subspace being \(W_m+1\) and the other \(V_m+1\).
+ Formally, we have \(V_m = W_{m+1} \oplus V{m+1}\).
+
+Wavelets consist of the dilations and translations of a single real valued function \(\psi \in L^2(\mathbb{R})\), called the \emph{analyzing wavelet} (also known as the \emph{basic wavelet} or \emph{mother wavelet).} By a dilation we mean a scaling of the argument, so that given any function \(\psi(t)\) and a parameter \(s > 0, \frac{1}{\sqrt{s}} \psi(\frac{t}{s})\) is a dilation of \(\psi\). Consequently, a dilation of a function corresponds to a either a spreading out or contraction of the function. We introduce the factor \frac{1}{\sqrt{s}}\(\) with the foresight that it yields a normalization necessary to have an orthonormal wavelet basis. Translation simply means a shift of the argument along the real axis, that is, given \(\tau\), the translation of \(\psi(t)\) by \(\tau\) is \(\psi(t-\tau)\).
+
+For any analyzing wavelet \(\psi\) we thus define a family of functions \(\psi_{s,\tau}\) by the dilations and translations of \(\psi\),
+
+\[
+\psi_{s,\tau}(t) = s^{-1/2} \psi(\frac{t-\tau}{s}), s, \tau \in \mathbb{R}, s > 0
+\]
+
+Each \(\psi_{s,\tau}\) is called a wavelet. We may represent any  function \(f \in L^2(\mathbb{R})\) by
+
+\[
+(W f)(s,\tau) = \langle f, \psi_{s,\tau} \rangle = \int_{-\infty}^{\infty} f(t) \psi_{s,\tau}(t) dt
+\]
+
+\(W f\) is called the \emph{continuous wavelet transform} of \(f\).
+
+Given \(s_0 > 1\) and \(\tau_0 \neq 0\), we may restrict \(s\) and \(\tau\), respectively, to the discrete lattices  \(s \in \{ s_0^m, m \in \mathbb{Z}\}\) and \(\tau \in \{ n s_0^m \tau_0, m, n \in \mathbb{Z}\}\). Then \(\psi_{s,\tau}\) becomes
+
+\[
+\psi_{mn}(t) = s_0^{-m/2} \psi(s_0^{-m} t - n \tau_0),
+\]
+
+and \(W f\) becomes
+
+\[
+(W f)(m,n) = \langle f, \psi_{mn} \rangle = \int_{-\infty}^{\infty} f(t) \psi_{mn}(t) dt.
+\]
+
+Note that  the translation parameter \(\tau\) depends upon the scaling parameter \(s_0\).
+When \(m\) is large and positive ,\(\psi_{mn}\) is spread out, and the translation steps become large accordingly.
+When \(m\) is large (in absolute value) and negative however the \(\psi_{mn}\) are very concentrated, and the translation steps are small.
+
+The choice of \(\tau_0\) is arbitrary and by convention is taken to be 1.
+On the other hand, the choice of \(s_0\) significantly affects the properties of the \(\psi_{mn}\).
+
+\end{document}
