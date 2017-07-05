@@ -1,6 +1,6 @@
 # Welcome to the Compositor github repo
  
-This repo contains
+This repository contains
 
 - a list of all open issues (both bugs and planned features)
 - example documents and document templates
