@@ -32,6 +32,6 @@ If you would like to contribute example documents, please fork this repository a
 
 ### Document templates
 
-Document templates are skeleton files that can be used to crete new documents. They will be shipped with the app and listed in the "Choose a template" window (File / New).
+Document templates are skeleton files for creating new documents. They will be shipped with the app and listed in the "Choose a template" window (File / New).
 
 If you would like to contribute document templates (articles, letters, reports, etc), please fork this repository and [create a pull request](https://help.github.com/articles/about-pull-requests/).
