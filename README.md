@@ -3,8 +3,7 @@
 This repo contains
 
 - a list of all open issues (both bugs and planned features)
-- example documents for trying out the app
-- document templates shipped with the app
+- example documents and document templates
 
 ## Issues
 
