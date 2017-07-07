@@ -9,7 +9,7 @@ This repository contains
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
 
-**Note**: Please ignore issues with the label `internals`. These are reminders about internal things that I need to fix or check, and will probably not make much sense to you.
+Please ignore issues with the label `internals`. These are reminders about internal things that I need to fix or check, and will probably not make much sense to you.
 
 ### Roadmap
 
