@@ -5,8 +5,6 @@
 
 - Detect use of inputenc package [\#98](https://github.com/ktraunmueller/Compositor/issues/98)
 - Give the icon a solid backdrop [\#93](https://github.com/ktraunmueller/Compositor/issues/93)
-- Detect document encoding [\#79](https://github.com/ktraunmueller/Compositor/issues/79)
-- Remove the About menu item [\#49](https://github.com/ktraunmueller/Compositor/issues/49)
 
 **Bugfixes**
 
@@ -18,3 +16,8 @@
 
 - Publish package and font installation instructions [\#1](https://github.com/ktraunmueller/Compositor/issues/1)
 - Improve visibility/discoverability of the issue tracker [\#92](https://github.com/ktraunmueller/Compositor/issues/92)
+
+**Won't fix or duplicate**
+
+- Detect document encoding [\#79](https://github.com/ktraunmueller/Compositor/issues/79)
+- Remove the About menu item [\#49](https://github.com/ktraunmueller/Compositor/issues/49)
