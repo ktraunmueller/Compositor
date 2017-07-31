@@ -28,8 +28,6 @@ I hope to collect some example documents and document templates over time.
 
 Example documents can be used to explore the app's features.
 
-Please note that some of the examples may require installation of additional packages. In the preview version, this [requires some manual intervention](http://compositorapp.com/blog/2017-07-08/InstallingPackagesAndFonts/). In the finished release 1.0, this will be taken care of by [an automatic package manager](https://github.com/ktraunmueller/Compositor/issues/17).
-
 If you would like to contribute example documents, please fork this repository and [create a pull request](https://help.github.com/articles/about-pull-requests/).
 
 ### Document templates
