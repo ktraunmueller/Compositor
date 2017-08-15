@@ -9,6 +9,11 @@ This repository contains
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
 
+If you would like to report an issue, please send email to support@compositorapp.com with
+- a brief description of the problem,
+- a list of steps to reproduce,
+- and, if possible, an example document with which the issue can be reproduced.
+
 Please ignore issues with the label `internals`. These are reminders about internal things that I need to fix or check, and will probably not make much sense to you.
 
 ### Roadmap
