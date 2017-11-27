@@ -20,7 +20,6 @@ If you would like to report an issue, please send email to support@compositorapp
 
 The roadmap groups issues by release:
 
-- [Preview](https://github.com/ktraunmueller/Compositor/milestone/1)
 - [Release 1.0](https://github.com/ktraunmueller/Compositor/milestone/2)
 - [Release 1.1](https://github.com/ktraunmueller/Compositor/milestone/3)
 - [Later](https://github.com/ktraunmueller/Compositor/milestone/4)
