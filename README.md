@@ -22,6 +22,7 @@ The roadmap groups issues by release:
 
 - [Release 1.0](https://github.com/ktraunmueller/Compositor/milestone/2)
 - [Release 1.1](https://github.com/ktraunmueller/Compositor/milestone/3)
+- [Release 1.2](https://github.com/ktraunmueller/Compositor/milestone/5)
 - [Later](https://github.com/ktraunmueller/Compositor/milestone/4)
 
 Check the [releases page](https://github.com/ktraunmueller/Compositor/releases) for the latest releases.
