@@ -2,8 +2,9 @@
  
 This repository contains
 
-- a list of all open issues (both bugs and planned features)
-- example files and document templates
+- a list of all **open issues** (both bugs and planned features)
+- a near-term release **roadmap**, and themes for future releases
+- **example files** and document templates
 
 ## Issues
 
