@@ -22,7 +22,9 @@ after checking that no such ticket already exists. Or send email to support@comp
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature "themes" (topics, epics), together with milestones for the next upcoming releases. 
 
-For the foreseeable future, there will be regular releases every 4-6 weeks (depending on release scope). For each release, I will select one theme to address, pick the tickets and bugfixes that shall go into this release, and bundle them up into a release milestone. 
+The **next release will be 1.1, scheduled for March 27**. The theme of this release is e-TeX, i.e., upgrading Compositor's built in TeX engine to e-TeX (from TeX3).
+
+For the foreseeable future, there will be regular releases every 4-6 weeks, depending on release scope. For each release, I will select one theme to address, pick the tickets and bugfixes that shall go into this release, and bundle them up into a release milestone. 
 
 ### Published Releases
 
