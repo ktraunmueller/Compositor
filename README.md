@@ -19,6 +19,8 @@ If you would like to report an issue, please create a ticket with
 
 after checking that no such ticket already exists. Or send email to support@compositorapp.com with the same information, and I will create a ticket.
 
+## Releases
+
 ### Themes & Upcoming Releases
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature "themes" (topics, epics), together with milestones for the next upcoming releases. 
@@ -31,7 +33,7 @@ For the foreseeable future, there will be regular releases every 4-6 weeks (depe
 
 Check the [releases page](https://github.com/ktraunmueller/Compositor/releases) for the latest and past releases.
 
-## Files
+## Example Files
 
 I hope to collect some example documents and document templates over time.
 
