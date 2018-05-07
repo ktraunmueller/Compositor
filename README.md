@@ -28,7 +28,7 @@ Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you 
 
 The **next release will be [1.2](https://github.com/ktraunmueller/Compositor/milestone/5), scheduled for May 8**. The theme of this release is support for LaTeX 3 and some popular packages that were previously unsupported (e.g., Koma-Script).
 
-For the foreseeable future, there will be regular releases every 4-6 weeks (depending on scope). For each release, I will select one theme to address, pick the tickets and bugfixes that shall go into this release and bundle them up into a release milestone.
+For the foreseeable future, there will be regular releases about every 6 weeks.
 
 ### Published Releases
 
