@@ -26,7 +26,7 @@ after checking that no such ticket already exists. Or send email to support@comp
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature _themes_ (_topics_, _epics_), together with milestones for the next upcoming releases. 
 
-The **next release will be [1.3](https://github.com/ktraunmueller/Compositor/milestone/28), scheduled for June 19**. The theme of this release will be a UTF-8 compatible workflow.
+The **next release will be [1.3](https://github.com/ktraunmueller/Compositor/milestone/28), scheduled for June 26**. The theme of this release will be a UTF-8 compatible workflow.
 
 For the foreseeable future, there will be regular releases about every 6 weeks.
 
