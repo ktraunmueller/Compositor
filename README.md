@@ -10,8 +10,6 @@ This repository contains
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
 
-Please ignore issues with the label `internals`. These are reminders about internal things that I need to fix or check, and will probably not make much sense to you.
-
 If you would like to report an issue, please create a ticket with
 - a short but descriptive title,
 - a brief description of the problem,
