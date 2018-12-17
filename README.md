@@ -24,7 +24,7 @@ after checking that no such ticket already exists. Or send email to support@comp
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature _themes_ (_topics_, _epics_), together with milestones for the next upcoming releases. 
 
-The **next release will be [1.5.12](https://github.com/ktraunmueller/Compositor/milestones)**, a bugfix update.
+The **next release will be [1.6](https://github.com/ktraunmueller/Compositor/milestones)**.
 
 ### Published Releases
 
