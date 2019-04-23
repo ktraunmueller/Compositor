@@ -10,14 +10,6 @@ This repository contains
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
 
-If you would like to report an issue, please create a ticket with
-- a short but descriptive title,
-- a brief description of the problem,
-- a list of steps to reproduce,
-- and, if possible, an example document with which the issue can be reproduced
-
-after checking that no such ticket already exists. Or send email to support@compositorapp.com with the same information, and I will create a ticket.
-
 ## Releases
 
 ### Themes & Upcoming Releases
