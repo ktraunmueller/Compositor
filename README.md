@@ -6,7 +6,7 @@ Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find
 
 ## Releases
 
-### Themes & Upcoming Releases
+### Upcoming Releases
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature _themes_ (_topics_, _epics_), together with milestones for the next upcoming releases. 
 
