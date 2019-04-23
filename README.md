@@ -1,12 +1,10 @@
 # Welcome to the Compositor Issue Tracker
  
-## Issues
+### Issues
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
 
-## Releases
-
-### Upcoming Releases
+### Roadmap
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature _themes_ (_topics_, _epics_), together with milestones for the next upcoming releases. 
 
