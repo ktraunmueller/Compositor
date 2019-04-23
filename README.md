@@ -1,11 +1,5 @@
-# Welcome to the Compositor github repo
+# Welcome to the Compositor Issue Tracker
  
-This repository contains
-
-- a list of all **open issues** (both bugs and planned features)
-- a near-term release **roadmap**, and themes for future releases
-- **example files**
-
 ## Issues
 
 Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find a list of all known issues and planned features.
