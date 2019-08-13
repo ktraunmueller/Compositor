@@ -8,7 +8,7 @@ Under [Issues](https://github.com/ktraunmueller/Compositor/issues), you can find
 
 Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you can find a list of feature _themes_ (_topics_, _epics_), together with milestones for the next upcoming releases. 
 
-The **next release will be [1.11](https://github.com/ktraunmueller/Compositor/milestones)**, scheduled for August 13.
+The **next release will be [1.12](https://github.com/ktraunmueller/Compositor/milestones)**, scheduled for September 10.
 
 ### Published Releases
 
