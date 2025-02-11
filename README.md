@@ -1,6 +1,6 @@
 # Welcome to the Compositor Product Roadmap
  
-Note that this GitHub repository is a bit unusual in that it does not contain any source code. It's purpose is solely for **issue tracking**. 
+Note that this GitHub repository is a bit unusual in that it does not contain any source code. Its purpose is solely for **issue tracking**. 
 The idea is to have the complete list of all known bugs, issues, and possible improvements out in public, accessible to anybody.
  
 ### Issues
