@@ -14,3 +14,23 @@ Under [Milestones](https://github.com/ktraunmueller/Compositor/milestones), you 
 ### Published Releases
 
 Check the [releases page](https://github.com/ktraunmueller/Compositor/releases) for past and current releases.
+
+### Release Download Statistics
+
+Run the dependency-free reporting script from the repository root:
+
+```sh
+./scripts/github_release_downloads.py
+```
+
+It fetches GitHub's current asset download counts for release `0.9.0` and every
+release published after it. The script prints a summary and creates two local
+files:
+
+- `release-downloads.svg` — grouped bars per version for macOS DMG, macOS ZIP
+  (Sparkle), Windows x64 MSIX, and Windows ARM64 MSIX; missing assets show `N/A`
+- `release-downloads.csv` — the underlying per-asset counts
+
+For authenticated requests, or if GitHub's anonymous API rate limit is too low,
+set a personal access token in `GITHUB_TOKEN`. Use `--help` to see options for a
+different repository, starting tag, or output paths.
